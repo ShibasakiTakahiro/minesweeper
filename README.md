@@ -3,6 +3,7 @@
 
 ## 実行例
 - python: pythonをインストール後、`python minesweeper.py`を実行してください。
+
 -c: Cコンパイラ（gccなど）をインストールし、`gcc -o minesweeper minesweeper.c`でコンパイルした後、`./minesweeper`で実行してください。
 
 ## ゲーム概要
