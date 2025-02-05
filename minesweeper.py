@@ -8,44 +8,43 @@ def initialize_board(size, num_mines):
     # 地雷を配置
     mine_positions = random.sample([(x, y) for x in range(size) for y in range(size)], num_mines)
     for x, y in mine_positions:
-        mine_map[y][x] = -1
+        mine_map[x][y] = -1
     
     # 隣接地雷数のカウント
     for x in range(size):
         for y in range(size):
-            if mine_map[y][x] == -1:
+            if mine_map[x][y] == -1:
                 continue
-            mine_map[y][x] = sum(
+            mine_map[x][y] = sum(
                 1 for dx, dy in [(-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)]
-                if 0 <= x+dx < size and 0 <= y+dy < size and mine_map[y+dy][x+dx] == -1
+                if 0 <= x+dx < size and 0 <= y+dy < size and mine_map[x+dx][y+dy] == -1
             )
     
     return mine_map, game_board
 
 def print_board(size, game_board, mine_map):
     print("[y]")
-    print("  " + " ".join(f"{i:2}" for i in range(size)))
-    print("  " + "---" * size)
-    for y in range(size):
-        row = [" x" if game_board[y][x] == 0 else " o" if game_board[y][x] == 2 else f" {mine_map[y][x]}" for x in range(size)]
-        print(f"{y}|" + " ".join(row))
-    print("[x]")
+    for y in reversed(range(size)):
+        row = [" x" if game_board[x][y] == 0 else " o" if game_board[x][y] == 2 else f" {mine_map[x][y]}" for x in range(size)]
+        print(f"{y} |" + " ".join(row))
+    print("   " + "---" * size)
+    print("   " + " ".join(f"{i:2}" for i in range(size)) + "  [x]")
 
 def open_cell(x, y, size, mine_map, game_board):
-    if mine_map[y][x] == -1:
+    if mine_map[x][y] == -1:
         print("ゲームオーバー！")
         return False
     
     stack = [(x, y)]
     while stack:
         cx, cy = stack.pop()
-        if game_board[cy][cx] == 1:
+        if game_board[cx][cy] == 1:
             continue
-        game_board[cy][cx] = 1
-        if mine_map[cy][cx] == 0:
+        game_board[cx][cy] = 1
+        if mine_map[cx][cy] == 0:
             for dx, dy in [(-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)]:
                 nx, ny = cx + dx, cy + dy
-                if 0 <= nx < size and 0 <= ny < size and game_board[ny][nx] == 0:
+                if 0 <= nx < size and 0 <= ny < size and game_board[nx][ny] == 0:
                     stack.append((nx, ny))
     return True
 
@@ -71,10 +70,10 @@ def play_minesweeper(size=8, num_mines=10):
             if not open_cell(x, y, size, mine_map, game_board):
                 break
         else:
-            game_board[y][x] = 2 if game_board[y][x] != 2 else 0
+            game_board[x][y] = 2 if game_board[x][y] != 2 else 0
         
         # 勝利判定
-        if sum(1 for i in range(size) for j in range(size) if game_board[j][i] == 0) == num_mines:
+        if sum(1 for i in range(size) for j in range(size) if game_board[i][j] == 0) == num_mines:
             print("Congraturation!")
             break
 
