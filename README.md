@@ -10,7 +10,8 @@ pythonをインストール後、`python minesweeper.py`を実行してくださ
 ## ゲームボード
 ファイルを起動すると以下の写真のようにゲームボードが表示されます。横軸（x）は0から7まで、縦軸（yは下から上に0から7までの座標を持ちます。ボード内のxは、未開示のマスを示します。
 
-![image](https://github.com/user-attachments/assets/a0ee15c4-cdb7-4830-8127-e6e95a282bcb)
+|![image](https://github.com/user-attachments/assets/a0ee15c4-cdb7-4830-8127-e6e95a282bcb) |
+|:-:|
 
 ## 操作方法
 
