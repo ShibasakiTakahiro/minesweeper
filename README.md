@@ -15,11 +15,12 @@ pythonをインストール後、`python minesweeper.py`を実行してくださ
 
 ## 操作方法
 
-モード1:セルを開く
+- モード1:セルを開く
 
-![image](https://github.com/user-attachments/assets/a2656a8c-e25b-40b6-b1d8-0ce41c8cb27f)
+|![image](https://github.com/user-attachments/assets/a2656a8c-e25b-40b6-b1d8-0ce41c8cb27f)|
+|:-:|
 
-モード2:フラグを設置/解除　(操作例はモード1と同様)
+- モード2:フラグを設置/解除　(操作例はモード1と同様)
 
 
 ## 勝利条件
