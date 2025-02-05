@@ -4,7 +4,7 @@
 ## 実行例
 - python: pythonをインストール後、`python minesweeper.py`を実行してください。
 
--c: Cコンパイラ（gccなど）をインストールし、`gcc -o minesweeper minesweeper.c`でコンパイルした後、`./minesweeper`で実行してください。
+- c: Cコンパイラ（gccなど）をインストールし、`gcc -o minesweeper minesweeper.c`でコンパイルした後、`./minesweeper`で実行してください。
 
 ## ゲーム概要
 プレイヤーはマスを開き、地雷を避けながらすべての安全なマスを開くことを目指します。
