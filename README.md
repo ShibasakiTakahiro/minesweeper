@@ -1,10 +1,9 @@
 # Minesweeper (マインスイーパー)
 このプロジェクトは、CまたはPythonで実装されたマインスイーパーゲームです。
 
-## 実行方法
-- python
-`python minesweeper.py`を実行してください。
-Cコンパイラ（gccなど）をインストール
+## 実行例
+- python: pythonをインストール後、`python minesweeper.py`を実行してください。
+-c: Cコンパイラ（gccなど）をインストールし、`gcc -o minesweeper minesweeper.c`でコンパイルした後、`./minesweeper`で実行してください。
 
 ## ゲーム概要
 プレイヤーはマスを開き、地雷を避けながらすべての安全なマスを開くことを目指します。
@@ -17,12 +16,12 @@ Cコンパイラ（gccなど）をインストール
 
 ## 操作方法
 
-- モード1:セルを開く
+- モード1: セルを開く
 
 |![image](https://github.com/user-attachments/assets/a2656a8c-e25b-40b6-b1d8-0ce41c8cb27f)|
 |:-:|
 
-- モード2:フラグを設置/解除　(操作例はモード1と同様)
+- モード2: フラグを設置/解除　(操作例はモード1と同様)
 
 
 ## 勝利条件
